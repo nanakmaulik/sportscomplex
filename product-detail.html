@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product Details | Nexjone Square Private Limited</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container navbar">
+      <a href="index.html" class="logo">
+        <span class="logo-mark">N</span>
+        <div>
+          <h2>Nexjone Square</h2>
+          <p>Private Limited</p>
+        </div>
+      </a>
+
+      <nav class="nav" id="navMenu">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="sectors.html">Sectors</a>
+        <a href="services.html">Services</a>
+        <a href="consultancy.html">Consultancy</a>
+        <a href="projects.html">Projects</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="contact.html" class="btn btn-primary">Request Quote</a>
+        <button class="menu-toggle" id="menuToggle">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="productDetailContainer"></main>
+  <a
+  href="https://wa.me/919779951910"
+  class="whatsapp-float"
+  target="_blank"
+  aria-label="Chat on WhatsApp"
+>
+  <i class="fa-brands fa-whatsapp"></i>
+</a>
+<footer class="footer premium-footer">
+  <div class="container premium-footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="footer-logo-img-link">
+        <img
+          src="assets/images/logo1.png"
+          alt="Nexjone Square Private Limited"
+          class="footer-logo-img"
+        />
+      </a>
+
+      <p class="footer-text">
+        Nexjone Square Private Limited provides construction, infrastructure
+        development and consultancy services across sports, healthcare,
+        residential, industrial and institutional sectors with a focus on
+        quality, execution and long-term value.
+      </p>
+
+      <div class="footer-socials">
+        <a href="#" aria-label="Facebook">
+          <i class="fa-brands fa-facebook-f"></i>
+        </a>
+
+        <a href="#" aria-label="Instagram">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+
+        <a href="#" aria-label="LinkedIn">
+          <i class="fa-brands fa-linkedin-in"></i>
+        </a>
+
+        <a href="https://wa.me/919779951910" target="_blank" aria-label="WhatsApp">
+          <i class="fa-brands fa-whatsapp"></i>
+        </a>
+      </div>
+    </div>
+
+    <div>
+      <h4>Quick Links</h4>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="sectors.html">Sectors</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="consultancy.html">Consultancy</a></li>
+        <li><a href="index.html#projects">Projects</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h4>Core Expertise</h4>
+      <ul class="footer-links">
+        <li><a href="#sportsServices">Synthetic Hockey Turfs</a></li>
+        <li><a href="#sportsServices">Football & Cricket Grounds</a></li>
+        <li><a href="#sportsServices">Box Cricket Arenas</a></li>
+        <li><a href="#sportsServices">Pickleball Courts</a></li>
+        <li><a href="#sportsServices">Squash Courts</a></li>
+        <li><a href="#sportsServices">Lawn Tennis Courts</a></li>
+        <li><a href="#sportsServices">Basketball & Badminton Courts</a></li>
+        <li><a href="#sportsServices">Swimming Pools</a></li>
+        <li><a href="sports-consultant.html">Sports Project Consultancy</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h4>Get in Touch</h4>
+
+      <ul class="footer-contact-list">
+        <li>
+          <i class="fa-solid fa-phone"></i>
+          <a href="tel:+919779951910">+91 97799 51910</a>
+        </li>
+
+        <li>
+          <i class="fa-solid fa-envelope"></i>
+          <a href="mailto:ersanjaymahajan@gmail.com">ersanjaymahajan@gmail.com</a>
+        </li>
+
+        <li>
+          <i class="fa-solid fa-location-dot"></i>
+          <span>Punjab, India</span>
+        </li>
+      </ul>
+
+      <a href="index.html#contact" class="footer-quote-btn">
+        Request Consultation
+        <i class="fa-solid fa-arrow-right"></i>
+      </a>
+    </div>
+  </div>
+
+  <div class="container footer-bottom premium-footer-bottom">
+    <p>© 2026 Nexjone Square Private Limited. All Rights Reserved.</p>
+    <p>Designed & Developed by <strong>KK Tech Fusion</strong></p>
+  </div>
+</footer>
+
+  <script src="js/products.js"></script>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const productId = params.get("id");
+
+    const product = products.find((item) => item.id === productId);
+
+    const detailContainer = document.getElementById("productDetailContainer");
+
+    if (!product) {
+      detailContainer.innerHTML = `
+        <section class="section">
+          <div class="container empty-product">
+            <h1>Product Not Found</h1>
+            <p>The product you are looking for does not exist.</p>
+            <a href="products.html" class="btn btn-primary">Back to Products</a>
+          </div>
+        </section>
+      `;
+    } else {
+      document.title = `${product.name} | Nexjone Square Private Limited`;
+
+      detailContainer.innerHTML = `
+        <section class="page-hero">
+          <div class="container">
+            <span class="tag">${product.category}</span>
+            <h1>${product.name}</h1>
+            <p>${product.shortDescription}</p>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="container product-detail-grid">
+            <div class="product-detail-image">
+              ${product.imageLabel}
+            </div>
+
+            <div class="product-detail-content">
+              <span class="section-tag">${product.category}</span>
+              <h2>${product.name}</h2>
+              <p>${product.description}</p>
+
+              <div class="detail-actions">
+                <a href="index.html#contact" class="btn btn-primary">Request Quote</a>
+                <a href="products.html" class="btn btn-secondary">Back to Products</a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section detail-section-light">
+          <div class="container detail-info-grid">
+            <div class="detail-box">
+              <h3>Applications</h3>
+              <ul>
+                ${product.applications
+                  .map(
+                    (item) =>
+                      `<li><i class="fa-solid fa-check"></i>${item}</li>`
+                  )
+                  .join("")}
+              </ul>
+            </div>
+
+            <div class="detail-box">
+              <h3>Key Features</h3>
+              <ul>
+                ${product.features
+                  .map(
+                    (item) =>
+                      `<li><i class="fa-solid fa-star"></i>${item}</li>`
+                  )
+                  .join("")}
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="cta-section product-cta-space">
+          <div class="container cta-box">
+            <div>
+              <span class="section-tag light-tag">Project Requirement</span>
+              <h2>Need ${product.name} for your project?</h2>
+              <p>
+                Contact our team for pricing, availability, technical guidance and installation support.
+              </p>
+            </div>
+            <a href="index.html#contact" class="btn btn-white">Get Custom Quote</a>
+          </div>
+        </section>
+      `;
+    }
+  </script>
+  <script src="js/main.js"></script>
+  
+</body>
+</html>
